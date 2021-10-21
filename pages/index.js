@@ -3,7 +3,6 @@ import styles from "../styles/Home.module.css";
 import { useState } from "react";
 
 export default function Home() {
-	let loadTime = Date.now();
 	const [mountImage, setMountImage] = useState(false);
 
 	console.log('Home is rendered')
