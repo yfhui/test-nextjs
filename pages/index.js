@@ -9,7 +9,7 @@ export default function Home() {
   return (
     <div className={styles.container}>
 	<button onClick={()=>{setMountImage(true);}}>click to load image</button>
-      {mountImage? (
+      {mountImage && (
         <Image
           width={1395}
           height={947}
@@ -20,7 +20,7 @@ export default function Home() {
             console.log("test", Date.now() - loadTime);
           }}
         />
-      ):null}
+      )}
     </div>
   );
 }
