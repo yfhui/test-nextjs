@@ -1,7 +1,7 @@
 import Head from "next/head";
 import Image from "next/image";
 import styles from "../styles/Home.module.css";
-import { useState, useEffect } from "react";
+import { useState } from "react";
 const shimmer = (w, h) => `
 <svg width="${w}" height="${h}" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
   <defs>
@@ -28,7 +28,7 @@ export default function Home({ data }) {
   return (
     <div className={styles.container}>
 	<button onClick={()=>{setMountImage(true);}}>click to load image</button>
-      {mountImage && (
+      {mountImage? (
         <Image
           width={1395}
           height={947}
@@ -41,7 +41,7 @@ export default function Home({ data }) {
             console.log("test", Date.now() - loadTime);
           }}
         />
-      )}
+      ):null}
     </div>
   );
 }
