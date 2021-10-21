@@ -24,11 +24,12 @@ const toBase64 = (str) =>
 export default function Home({ data }) {
   let loadTime = Date.now();
   const [mountImage, setMountImage] = useState(false);
-  useEffect(() => {
-    setMountImage(true);
-  }, []);
+//   useEffect(() => {
+//     setMountImage(true);
+//   }, []);
   return (
     <div className={styles.container}>
+	<button onClick={()=>{setMountImage(true);}}/>
       {mountImage && (
         <Image
           width={1395}
